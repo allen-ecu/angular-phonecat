@@ -21,6 +21,9 @@ Adobe Dreamweaver CC 2014
 6.type npm start
 7.open browser, type localhost:8000/app/
 
+## Notice:
+When you type "npm start" in the nodejs cmd at the first time, it needs Internet to download some bower_components and node_modules files.
+
 ## Reference:
 ---------------------------------
 http://learn.ionicframework.com/videos/windows-android/
