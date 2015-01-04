@@ -1,0 +1,36 @@
+From:Lauri Jalonen <Lauri.Jalonen@inhousegroup.com.au>
+To: dustonlyperth@gmail.com
+Date:12/31/14 at 2:56 PM
+Subject: Re: Application received for Experienced HTML5/CSS3/ AngularJS/D3 Web Developer Required
+Contents:
+Hi Mao,
+
+Thank you for submitting your application!
+
+In order for both of us to get a feel of what it is like to work
+together, we would like for you to try a practical exercise of visualising some data.
+
+We are therefore giving you a homework assignment, which goes as follows:
+
+1. Create a repository on Bitbucket or Github.
+2. Using the attached JSON file we provide to you, use either D3 or
+Highcharts to create an interactive visualisation that you think best
+communicates the data in the JSON file. Bonus points for using AngularJS
+for putting it all together. We will be mainly be looking at the
+Javascript, but HTML and CSS are important too.
+3. As you develop your visualisation, make sure you commit all your
+changes to the online repo you created. We pay attention to the pragmatic
+nature of your commits.
+4. When you¡¯re done and ready to show us your work, let us know. However,
+the deadline is 15th January, 2015.
+
+Looking forward to viewing what you¡¯ve put together!
+
+With Kind Regards,
+Lauri Jalonen
+
+Lauri Jalonen
+Chief Product Officer
+Inhouse Group
++61 (0) 429 105 499
+http://inhousegroup.com.au

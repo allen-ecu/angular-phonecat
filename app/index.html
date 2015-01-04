@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" ng-app="testlocationApp">
+<head>
+  <title>Testlocation Data Demo</title>
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English"> 
+  <meta name="devloper" content="WEIQINGMAO 0432388818 PERTH WESTERN AUSTRALIA DUSTONLYPERTH@GMAIL.COM" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="css/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="css/grids-responsive-min.css">
+  <!--<![endif]-->
+  <link rel="stylesheet" href="css/pure-min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/highcharts.js"></script>
+  <script src="js/exporting.js"></script>
+</head>
+<body ng-controller="TestLocationCtrl">
+	<!--Body content-->
+    <div id="container" style="min-width: 960px">
+        <div class="pure-g">
+        	<div class="pure-u-1-3"><span>ID: </span>{{locations.id}}</div>
+            <div class="pure-u-1-3" ng-class="getStartDateTime()"><span>Start: </span>{{locations.sdate}} {{locations.stime}} UTC{{locations.sutc}}</div>
+            <div class="pure-u-1-3" ng-class="getEndDateTime()"><span>Finish: </span>{{locations.edate}} {{locations.etime}} UTC{{locations.eutc}}</div>
+        </div>
+        <br/>
+        <div class="pure-g">
+            <div class="pure-u-1-3"><span>Period: </span><span>{{locations.period}}</span></div>
+            <div class="pure-u-1-3"><span>Total Traffic: </span><span>{{locations.total_traffic}}</span></div>
+            <div class="pure-u-1-3"><span>Return Rate: </span><span>{{locations.return_rate}}</span></div>
+        </div>
+        <br/>
+        <div class="pure-g">
+            <div class="pure-u-1-3"><span>Average Dwell Time: </span><span>{{locations.avg_dwell_time}}</span></div>
+            <div class="pure-u-1-3"><span>Average Return Interval: </span><span>{{locations.avg_return_interval}}</span></div>
+            <div class="pure-u-1-3"></div>
+        </div>
+        <br/>
+        <div class="pure-g">
+            <div ng-class="buildTotalByDwellChart()" id="total_by_dwell" class="pure-u-1-3"></div>
+            <div ng-class="buildTotalByFreqChart()" id="total_by_freq" class="pure-u-1-3"></div>
+            <div ng-class="buildTotalByDwellBracketChart()" id="total_by_dwell_bracket" class="pure-u-1-3"></div>
+        </div>
+        <br />
+        <div class="pure-g">
+            <div class="pure-u-1-2"><span>Avg hours mode: </span><span>{{locations.avg_hours_mode}}</span></div>
+            <div class="pure-u-1-2"><span>Avg days mode: </span><span>{{locations.avg_days_mode}}</span></div>
+        </div>
+        <br/>
+        <div class="pure-g">
+            <div ng-class="buildAvgHoursChart()" id="avg_hours" class="pure-u-1-2"></div>
+            <div ng-class="buildAvgDaysChart()" id="avg_days" class="pure-u-1-2"></div>
+        </div>
+        <br/>
+        <div class="pure-g">
+            <div class="pure-u-1-3"><span>Percent qualified visits: </span><span>{{locations.percent_qualified_visits}}</span></div>
+            <div class="pure-u-1-3"><span>Percent engaged visits: </span><span>{{locations.percent_engaged_visits}}</span></div>
+            <div class="pure-u-1-3"><span>Percent visits potential: </span><span>{{locations.percent_visits_potential}}</span></div>
+        </div>
+        <br/>
+        <div class="pure-g">
+            <div ng-class="buildSublocPercentVisitsChart()" id="subloc_percent_visits" class="pure-u-1"></div>
+        </div>
+        <br/>
+        <div class="pure-g">
+            <div ng-class="buildVisitsChart()" id="visits" class="pure-u-1"></div>
+        </div>
+        <br/>
+	</div>
+</body>
+</html>
