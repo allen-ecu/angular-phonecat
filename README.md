@@ -82,4 +82,4 @@ For more information on AngularJS please check out http://angularjs.org/
 [karma]: http://karma-runner.github.io
 
 ## Version
-v 0.1
+v 0.2

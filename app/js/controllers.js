@@ -191,8 +191,10 @@ testlocationApp.controller('TestLocationCtrl', ['$scope','$http', function($scop
 		$('#total_by_dwell').highcharts({
 			chart: {
 				plotBackgroundColor: null,
-				plotBorderWidth: 1,//null,
-				plotShadow: false
+				plotBorderWidth: null,
+				plotShadow: false,
+				borderWidth: 1,//border of the chart
+				borderColor: '#cccccc',
 			},
 			title: {
 				text: 'Total by Dwell'
@@ -284,48 +286,78 @@ testlocationApp.controller('TestLocationCtrl', ['$scope','$http', function($scop
 	//load total by dwell bracket chart
 	$scope.buildTotalByDwellBracketChart = function (){
 		$('#total_by_dwell_bracket').highcharts({
+			colors: ['#88eeba', '#2de889', '#14b463', '#319366', '#078b67', '#245b42'],//custom colors
 			chart: {
 				plotBackgroundColor: null,
-				plotBorderWidth: 1,//null,
-				plotShadow: false
+				plotBorderWidth: null,//border of the plot
+				plotShadow: false,
+				borderWidth: 1,//border of the chart
+				borderColor: '#cccccc',
+				width: 550,//width of the chart
+				height: 450,//height of the chart
+				marginLeft: -50,//move plot left
+				spacingBottom: 100//bottom space
 			},
 			title: {
-				text: 'Total by Dwell Branket'
+				text: 'Dwell Time',
+				x:-160,
+				y:30
 			},
 			tooltip: {
-				pointFormat: '{point.y}</b>'
-			},
-			plotOptions: {
+				pointFormat: '<div class="themeColor"><span class="large">{point.percentage:.0f}%</span>  ({point.y})<br/>VISITORS SPENT<br/>{point.name}<br/><span class="highlight">compared to all-time average of <em>{point.total}</em></span><br/></div>',
+				headerFormat: '',
+				footerFormat: '',
+				shared: true,
+				useHTML: true //allow custom tooltip contents
+			},	
+        	plotOptions: {
 				pie: {
 					allowPointSelect: true,
 					cursor: 'pointer',
 					dataLabels: {
-						enabled: true,
-						format: '<b>{point.name}</b>: {point.y}',
+						enabled: false,//turn off labels
+						format: '',
 						style: {
 							color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
 						}
 					}
 				}
 			},
+			subtitle: {
+				text: '<span class="labels">This is a sample text! XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span><div class="labels">This is another sample text! XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div>',
+				floating: true,
+				align: 'center',
+				useHTML: true,
+				x: -10,
+				verticalAlign: 'bottom',
+				y: 40
+        	},
 			credits: {
-				enabled: false
+				enabled: false //control credits
+			},
+			legend: {//don't forget the showInLengend switch in series
+				enabled: true,
+				layout: 'vertical',
+				align: 'right',
+				verticalAlign: 'top',
+				y: 80,
+				x: -50
 			},
 			series: [{
 				type: 'pie',
 				name: '',
-				data: [
+				showInLegend: true,//lengend switch
+				data: [//load data here
 					{
-						name: 'b1',
-						y: $scope.locations.total_by_dwell_bracket['b1'],
+						name: '5-10 mins',
+						y: $scope.locations.total_by_dwell_bracket['b2'],
 						sliced: true,
 						selected: true
 					},
-					['b2', $scope.locations.total_by_dwell_bracket['b2']],
-					['b3', $scope.locations.total_by_dwell_bracket['b3']],
-					['b4', $scope.locations.total_by_dwell_bracket['b4']],
-					['b5', $scope.locations.total_by_dwell_bracket['b5']],
-					['b6', $scope.locations.total_by_dwell_bracket['b6']]
+					['10-15 mins', $scope.locations.total_by_dwell_bracket['b3']],
+					['15-30 mins', $scope.locations.total_by_dwell_bracket['b4']],
+					['30-60 mins', $scope.locations.total_by_dwell_bracket['b5']],
+					['>60 mins', $scope.locations.total_by_dwell_bracket['b6']]
 				]
 			}]
 		});	

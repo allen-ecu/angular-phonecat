@@ -1,4 +1,4 @@
-/* app css stylesheet */
+﻿/* app css stylesheet */
 
 body {
   	padding: 20px;
@@ -15,4 +15,18 @@ div span {
 div span:nth-child(2) {
 	color:#FF0000;
 	font-weight:normal;
+}
+.large {
+	font-size: 18px;
+}
+.themeColor {
+	color: #14b463;
+	font-weight: bold;
+}
+.highlight {
+	color:#000000;
+}
+.labels {
+	font-weight:bold;
+	color:#000000;
 }
